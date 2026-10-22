@@ -1,0 +1,15 @@
+import {motion} from 'framer-motion';import {ArrowUpRight} from 'lucide-react';import {Link} from 'react-router-dom';import Reveal from '../components/Reveal';import CallingAgentDemo from '../components/CallingAgentDemo';
+const projects=[
+['ADSS Solar Energy','Business website','A clean, conversion-focused website for a solar energy company — services, trust signals and lead capture in one place.','https://adsssolarenergy.vercel.app',['React','Lead capture','Responsive'],'orange'],
+['Mastercut','Salon website','A stylish brand site for a Bhubaneswar salon with services, pricing and easy booking enquiries.','https://mastercutbbsr.vercel.app',['Brand site','Booking','Mobile-first'],'pink'],
+['MSD','Web application','A full-stack web product built end to end — interface, data layer and deployment.','https://msd-gules.vercel.app',['Full-stack','Dashboard','API'],'blue'],
+['EVOLV Lucid','AI product','An AI-powered experience exploring how intelligent interfaces can simplify everyday business tasks.','https://evolv-dusky.vercel.app',['AI','LLM','Web app'],'purple'],
+['EVOLV CRM','CRM / SaaS','A beautiful CRM for managing leads, customers, pipelines and team activity — built for small, fast teams.','https://evolv-crm.vercel.app',['CRM','SaaS','Analytics'],'green']];
+export default function Projects(){return <>
+<section className="page-hero section"><motion.div initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.7,ease:[.22,1,.36,1]}}><div className="eyebrow">SELECTED WORK</div><h1>Things we've<br/><span>shipped.</span></h1><p>Websites, SaaS products, CRMs and AI apps — live and in use.</p></motion.div></section>
+<section className="section projects-section"><div className="project-grid">{projects.map(([name,type,desc,url,tags,tone],i)=><Reveal key={name} delay={(i%2)*.08}><motion.a href={url} target="_blank" rel="noreferrer" className="project-card" whileHover={{y:-6}} transition={{type:'spring',stiffness:300,damping:24}}>
+<div className={`project-preview ${tone}`}><span className="preview-bar"><i/><i/><i/><em>{url.replace('https://','')}</em></span><div className="preview-name">{name}</div></div>
+<div className="project-body"><div className="project-meta"><span>0{i+1} · {type}</span><ArrowUpRight size={18}/></div><h3>{name}</h3><p>{desc}</p><div className="tags">{tags.map(t=><em key={t}>{t}</em>)}</div></div></motion.a></Reveal>)}</div></section>
+<section className="section agent-section"><Reveal><div className="agent-grid"><div><div className="eyebrow">VOICE AI</div><h2>We build calling agents too.</h2><p>Hear one of our voice agents handle a real conversation — natural, fast and available 24/7 for support, qualification, reminders and follow-ups.</p><Link className="btn primary" to="/contact">Get a calling agent <ArrowUpRight size={17}/></Link></div><CallingAgentDemo/></div></Reveal></section>
+<section className="cta-band"><Reveal><div className="eyebrow">YOUR PROJECT NEXT</div><h2>Let's build something<br/><span>worth showing.</span></h2><Link className="btn primary" to="/contact">Start a project <ArrowUpRight size={17}/></Link></Reveal></section>
+</>}
