@@ -19,3 +19,4 @@
 @keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(6vw,4vh) scale(1.12)}100%{transform:translate(-4vw,8vh) scale(.94)}}
 @media(prefers-reduced-motion:reduce){.bg-blend i{animation:none}}
 .nav-wrap{background:rgba(255,255,255,.72)}
+main{min-height:100vh}.route-bar{position:fixed;top:0;left:0;right:0;height:2px;z-index:100;background:linear-gradient(90deg,var(--purple),var(--pink));transform-origin:left}

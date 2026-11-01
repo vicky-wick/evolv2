@@ -8,9 +8,19 @@
     <meta name="description"
         content="EVOLV builds websites, business software, automation and AI systems for ambitious businesses." />
     <title>EVOLV — Technology that moves business forward</title>
+    <style>
+        #boot{position:fixed;inset:0;z-index:999;background:#fff;display:grid;place-items:center;transition:opacity .45s ease}
+        #boot.done{opacity:0;pointer-events:none}
+        #boot b{font:600 28px/1 Inter,Arial,sans-serif;letter-spacing:-1.2px;color:#080808}
+        #boot b span{color:#7a3dff}
+        #boot i{display:block;width:120px;height:2px;margin-top:18px;background:#eee;overflow:hidden;position:relative}
+        #boot i:after{content:"";position:absolute;inset:0;width:40%;background:#7a3dff;animation:boot 1s ease-in-out infinite}
+        @keyframes boot{from{transform:translateX(-100%)}to{transform:translateX(250%)}}
+    </style>
 </head>
 
 <body>
+    <div id="boot"><div><b>EVOLV<span>.</span></b><i></i></div></div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
 </body>
